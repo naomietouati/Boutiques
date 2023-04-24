@@ -11,7 +11,7 @@
         /* 1. Connexion à une base MySQL avec l'invocation de pilote */
         $dbh=connect_bd();
         //2. RECUPERER LES DONNEES 
-        $resultat = $dbh->query("select * from produit")->fetchAll();
+        $resultat = $dbh->query("select * from produits")->fetchAll();
     // print_r($resultat);
         return $resultat;
     }
@@ -30,7 +30,7 @@
         $dbh=connect_bd();
         // 2 la requete d'insertion
         $info=$dbh->query(
-            "INSERT INTO produit (id, titre, description, prix,nom_image)
+            "INSERT INTO produits (id, titre, description, prix,nom_image)
              VALUES (NULL, '$titre', '$description', '$prix','$nom_image')"
         );
         echo "\nPDO::errorCode(): ", $info->errorCode();
