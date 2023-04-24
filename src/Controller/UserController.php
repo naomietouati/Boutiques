@@ -19,7 +19,7 @@ function enregistrer_user(){
     $email = $_POST['email'];
     $pwd = $_POST['pwd']; 
     $name_image= $_FILES['image']['name'];
-    include __DIR__.'/../Entity/User.php';
+    //include __DIR__.'/../Entity/User.php';
 
     // On peut valider le fichier et le stocker définitivement
     move_uploaded_file($_FILES['image']['tmp_name'],  

@@ -29,8 +29,6 @@ function verifie_authentication(){
         include __DIR__.'/../../templates/espace_membre.php';
         return; 
 
-
-
         // 2 redirection vers l'espace membre
 
     }
@@ -39,7 +37,15 @@ function verifie_authentication(){
         echo "Mot de passe incorect";
         include __DIR__.'/../../templates/form_connexion.php';
     }
+
+
+    
 }
 
-
 // fonction de deconnexion
+    // on detruit la session
+    function deconnexion(){
+        session_destroy();
+        // on redirige notre site vers la page d'accueil
+        header('Location: index.php');
+    }

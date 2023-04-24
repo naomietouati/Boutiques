@@ -9,7 +9,14 @@
 // gestion de la variable path_info
 // include "header.php";
 session_start();
+//on considere que par défaut on est deconnecter
+$connexion=false;
+//verifie si connecter
+if(isset($_SESSION['user'])){
+    $connexion=true;
+}
 //include_once __DIR__.'/../src/Entity/User.php';
+//var_dump($_SESSION);
 //echo $_SESSION['user'];
 //$user=getDetailUser($_SESSION['user']);
 //var_dump($user);
@@ -110,7 +117,12 @@ elseif ($page=="/verifie_authentication"){
     // fonction qui va verifie les identifiants de connexion
     verifie_authentication();
 }
-
+//deconnexion
+elseif ($page=="/deconnexion"){ 
+    include __DIR__.'/../src/Controller/AuthentificationController.php';
+    // fonction qui supprime la variable session
+    deconnexion();
+}
 
 else {
     echo "ERROR 404";

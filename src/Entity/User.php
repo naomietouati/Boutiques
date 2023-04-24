@@ -34,7 +34,7 @@
             "INSERT INTO user (id, email, password, image)
              VALUES (NULL, '$email', '$password','$image')"
         );
-        echo "\nPDO::errorCode(): ", $info->errorCode();
+        //echo "\nPDO::errorCode(): ", $info->errorCode();
 
     }
 
